@@ -1,0 +1,115 @@
+<%= form_for(@person) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% @person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="row">
+		<div class="small-1 columns"><label class="inline"><%= f.label :active %></label></div>
+		<div class="small-3 columns end"><%= f.check_box :active, checked: true %></div>
+	</div>
+	<fieldset><legend>Basic Info</legend>
+		<div class="row">
+			<div class="small-3 columns"><%= f.text_field :first_name, placeholder: "First name" %></div>
+			<div class="small-3 columns"><%= f.text_field :middle_name, placeholder: "Middle name" %></div>
+			<div class="small-3 columns end"><%= f.text_field :last_name, placeholder: "Last name" %></div>
+		</div>	
+		<div class="row">
+			<div class="small-6 columns end"><%= f.text_field :email, placeholder: "Email address" %></div>
+		</div>
+		<div class="row">    
+			<div class="small-6 columns end"><%= f.text_field :password, placeholder: "Password" %></div>
+		</div>
+	</fieldset>
+	<fieldset><legend>Phone Numbers</legend>
+		<div class="row">
+			<div class="small-4 columns"><%= f.text_field :cell_phone, placeholder: "Cell Phone" %></div>
+			<div class="small-4 columns"><%= f.text_field :work_phone, placeholder: "Work Phone" %></div>
+			<div class="small-4 columns"><%= f.text_field :home_phone, placeholder: "Home Phone" %></div>
+		</div>
+	</fieldset>
+	<fieldset><legend>Address</legend>
+	  <div class="row">
+		<div class="small-6 columns"><%= f.text_field :address1, placeholder: "Address line 1" %></div>
+		<div class="small-6 columns end"><%= f.text_field :address2, placeholder: "Address line 2" %></div>
+	  </div>
+	  <div class="row">
+		<div class="small-3 columns"><%= f.text_field :city, placeholder: "City" %></div>
+		<div class="small-1 columns"><%= f.text_field :state, placeholder: "State" %></div>
+		<div class="small-2 columns end"><%= f.text_field :zip, placeholder: "Zip" %></div>
+	  </div>
+	</fieldset>
+	<fieldset><legend>Emergency Contact</legend>
+	  <div class="row">
+		<div class="small-4 columns"><%= f.text_field :emergency_contact, placeholder: "Contact Name" %></div>
+		<div class="small-4 columns"><%= f.text_field :emergency_phone, placeholder: "Phone Number" %></div>
+		<div class="small-4 columns"><%= f.text_field :emergency_relation, placeholder: "Relation" %></div>
+	  </div>
+	</fieldset>
+	<fieldset><legend>Other Info</legend>
+		<div class="row">		
+			<div class="small-12 columns"><%= f.label :gender %>
+				<%= f.radio_button :gender, 'm' %><%= f.label :gender_m, 'Male' %>
+				<%= f.radio_button :gender, 'f' %><%= f.label :gender_f, 'Female' %>
+			</div>
+		</div>
+		<div class="row" >
+			<div class="small-2 columns end"><%= f.label :dob, "Date of Birth" %>
+				<%= f.date_select :dob, { start_year: 1930, end_year: 2005 }   %>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset><legend>TSA/Security</legend>
+		<div class="row">
+			<div class="small-12 columns"><%= f.label :citizenship %></div>
+			<div class="small-9 columns end"><%= f.text_field :citizenship, placeholder: "Citizenship Country" %></div>
+		</div>
+		<div class="row">
+			<div class="small-9 columns"><%= f.label :citizenship_proof %>
+				<%= f.radio_button :citizenship_proof, 'none', checked: true %><%= f.label :citizenship_proof_none, 'None/Pending' %>
+				<%= f.radio_button :citizenship_proof, 'passport' %><%= f.label :citizenship_proof_passport, 'Valid Passport' %>
+				<%= f.radio_button :citizenship_proof, 'birthcert' %><%= f.label :citizenship_proof_birthcert, 'Birth Certificate' %>
+				<%= f.radio_button :citizenship_proof, 'natcert' %><%= f.label :citizenship_proof_natcert, 'Naturalization Certificate' %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-9 columns"><%= f.label :tsa_status, "TSA Status" %>
+				<%= f.radio_button :tsa_status, 'citizen' %><%= f.label :tsa_status_citizen, 'US Citizen' %>	
+				<%= f.radio_button :tsa_status, 'pending' %><%= f.label :tsa_status_pending, 'Pending' %>	
+				<%= f.radio_button :tsa_status, 'approved' %><%= f.label :tsa_status_approved, 'Approved' %>	
+				<%= f.radio_button :tsa_status, 'denied' %><%= f.label :tsa_status_denied, 'Denied' %>	
+			</div>
+		</div>
+	</fieldset>  
+	<fieldset><legend>FAA Ratings/Medical</legend>
+		<div class="row">
+			<div class="small-12 columns"><%= f.label :faa_ratings, "FAA Ratings Held" %></div>
+			<div class="small-9 columns end"><%= f.text_field :faa_ratings %></div>
+		</div>
+		<div class="row">
+			<div class="small-9 columns"><%= f.label :faa_medical_class, "FAA Medical Class" %>
+				<%= f.radio_button :faa_medical_class, 'none', checked: true %><%= f.label :faa_medical_class_none, 'None' %>
+				<%= f.radio_button :faa_medical_class, 'c3' %><%= f.label :faa_medical_class_c3, 'Class 3' %>
+				<%= f.radio_button :faa_medical_class, 'c2' %><%= f.label :faa_medical_class_c2, 'Class 2' %>
+				<%= f.radio_button :faa_medical_class, 'c1' %><%= f.label :faa_medical_class_c1, 'Class 1' %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-3 columns end"><%= f.label :faa_medical_exp_date, "FAA Medical expiration date" %>
+				<%= f.date_select :faa_medical_exp_date %>
+			</div>
+		</div>
+	</fieldset>
+		<div class="row">
+			<div class="small-3 columns end">
+				<%= f.submit class: "button radius expanded" %>
+			</div>  
+		</div>
+<% end %>

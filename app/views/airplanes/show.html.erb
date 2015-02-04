@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Registration:</strong>
+  <%= @airplane.registration %>
+</p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @airplane.make %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @airplane.model %>
+</p>
+
+<p>
+  <strong>Model code:</strong>
+  <%= @airplane.model_code %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @airplane.year %>
+</p>
+
+<p>
+  <strong>Serial no:</strong>
+  <%= @airplane.serial_no %>
+</p>
+
+<p>
+  <strong>Seats:</strong>
+  <%= @airplane.seats %>
+</p>
+
+<p>
+  <strong>Fuel burn:</strong>
+  <%= @airplane.fuel_burn %>
+</p>
+
+<%= link_to 'Edit', edit_airplane_path(@airplane) %> |
+<%= link_to 'Back', airplanes_path %>

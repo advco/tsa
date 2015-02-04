@@ -1,0 +1,120 @@
+<%= form_for(@person) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% @person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<fieldset>
+<legend>Name</legend>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :first_name, class: "right inline" %></div>
+    <div class="small-9 columns"><%= f.text_field :first_name %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :middle_name, class: "right inline" %></div>
+    <div class="small-9 columns"><%= f.text_field :middle_name %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :last_name, class: "right inline" %></div>
+    <div class="small-9 columns"><%= f.text_field :last_name %></div>
+  </div>
+</fieldset>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :email %></div>
+    <div class="small-9 columns"><%= f.text_field :email %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :password %></div>
+    <div class="small-9 columns"><%= f.text_field :password %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :active %></div>
+    <%= f.check_box :active %>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :cell_phone %></div>
+    <div class="small-9 columns"><%= f.text_field :cell_phone %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :work_phone %></div>
+    <div class="small-9 columns"><%= f.text_field :work_phone %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :home_phone %></div>
+    <div class="small-9 columns"><%= f.text_field :home_phone %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :address1 %></div>
+    <div class="small-9 columns"><%= f.text_field :address1 %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :address2 %></div>
+    <div class="small-9 columns"><%= f.text_field :address2 %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :city %></div>
+    <div class="small-9 columns"><%= f.text_field :city %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :state %></div>
+    <div class="small-9 columns"><%= f.text_field :state %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :zip %></div>
+    <div class="small-9 columns"><%= f.text_field :zip %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :emergency_contact %></div>
+    <div class="small-9 columns"><%= f.text_field :emergency_contact %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :emergency_phone %></div>
+    <div class="small-9 columns"><%= f.text_field :emergency_phone %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :emergency_relation %></div>
+    <div class="small-9 columns"><%= f.text_field :emergency_relation %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :gender %></div>
+    <div class="small-9 columns"><%= f.text_field :gender %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :dob %></div>
+    <%= f.date_select :dob %>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :citizenship %></div>
+    <div class="small-9 columns"><%= f.text_field :citizenship %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :citizenship_proof %></div>
+    <div class="small-9 columns"><%= f.text_field :citizenship_proof %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :tsa_status %></div>
+    <div class="small-9 columns"><%= f.text_field :tsa_status %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :faa_ratings %></div>
+    <div class="small-9 columns"><%= f.text_field :faa_ratings %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :faa_medical_class %></div>
+    <div class="small-9 columns"><%= f.text_field :faa_medical_class %></div>
+  </div>
+  <div class="row collapse">
+    <div class="small-3 small-offset-3 columns"><%= f.label :faa_medical_exp_date %></div>
+    <%= f.date_select :faa_medical_exp_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

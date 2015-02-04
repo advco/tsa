@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registration: MyString
+  make: MyString
+  model: MyString
+  model_code: MyString
+  year: MyString
+  serial_no: MyString
+  seats: 1
+  fuel_burn: 1
+
+two:
+  registration: MyString
+  make: MyString
+  model: MyString
+  model_code: MyString
+  year: MyString
+  serial_no: MyString
+  seats: 1
+  fuel_burn: 1

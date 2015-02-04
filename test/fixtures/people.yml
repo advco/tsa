@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  email: MyString
+  password: MyString
+  active: false
+  cell_phone: MyString
+  work_phone: MyString
+  home_phone: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  emergency_contact: MyString
+  emergency_phone: MyString
+  emergency_relation: MyString
+  gender: MyString
+  dob: 2015-02-03
+  citizenship: MyString
+  citizenship_proof: MyString
+  tsa_status: MyString
+  faa_ratings: MyString
+  faa_medical_class: MyString
+  faa_medical_issue_date: 2015-02-03
+
+two:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  email: MyString
+  password: MyString
+  active: false
+  cell_phone: MyString
+  work_phone: MyString
+  home_phone: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  emergency_contact: MyString
+  emergency_phone: MyString
+  emergency_relation: MyString
+  gender: MyString
+  dob: 2015-02-03
+  citizenship: MyString
+  citizenship_proof: MyString
+  tsa_status: MyString
+  faa_ratings: MyString
+  faa_medical_class: MyString
+  faa_medical_issue_date: 2015-02-03
